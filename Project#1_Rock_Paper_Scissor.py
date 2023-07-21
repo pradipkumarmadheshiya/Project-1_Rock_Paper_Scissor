@@ -1,4 +1,4 @@
-from random import randint
+import random
 cChoice={1:"⛰️",2:"📃",3:"✂️"}
 while True:
     print("Rock Paper Scissor Game:-")
@@ -20,9 +20,9 @@ while True:
             print("You selected: ✂️")
         else:
             print("Invalid selection")
-            break
-
-        computerChoice=cChoice[randint(0,2)]
+            continue
+        c=["⛰️","📃","✂️"]
+        computerChoice=random.choice(c)
         
         if computerChoice==cChoice[yourChoice]:
             print("Computer selected:",computerChoice)
@@ -57,4 +57,5 @@ while True:
     if yourNeed=="yes" or yourNeed=="YES" or yourNeed=="Yes":
         continue
     else:
+        print("Thanks!")
         break
