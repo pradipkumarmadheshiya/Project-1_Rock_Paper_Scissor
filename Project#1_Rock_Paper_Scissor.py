@@ -45,9 +45,9 @@ while True:
         print()
 
     if yourPoints>computerPoints:
-        print("👏You wins this match")
+        print("👏 You wins this match")
     elif yourPoints<computerPoints:
-        print("😔You lose this match")
+        print("😔 You lose this match")
     else:
         print("Match drawn")
     print()
