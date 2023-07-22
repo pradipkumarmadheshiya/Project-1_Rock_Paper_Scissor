@@ -12,7 +12,7 @@ while True:
         game=int(input())
         if game==1:
             pass
-        else:
+        elif game==0:
             if yourPoints>computerPoints:
                 print("👏 You wins this Game")
             elif yourPoints<computerPoints:
@@ -21,6 +21,8 @@ while True:
                 print("Game drawn")
             print("Thanks! for playing...")
             break
+        else:
+            print("Invalid key")
     print("Round",i,"start:")
     print()
     print("Please select any one option-")
