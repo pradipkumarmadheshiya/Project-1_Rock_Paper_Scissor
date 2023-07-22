@@ -1,61 +1,62 @@
 import random
 cChoice={1:"⛰️",2:"📃",3:"✂️"}
+i=1
+yourPoints,computerPoints=0,0
 while True:
-    print("Rock Paper Scissor Game:-")
-    yourPoints,computerPoints=0,0
-    for i in range(1,6):
-        print()
-        print("Round",i,"start:")
-        print()
-        print("Please select any one option-")
-        print(str(1)+" for ⛰️",str(2)+" for 📃",str(3)+" for ✂️",sep="\n")
-        print()
-
-        yourChoice=int(input())
-        if yourChoice==1:
-            print("You selected: ⛰️")
-        elif yourChoice==2:
-            print("You selected: 📃")
-        elif yourChoice==3:
-            print("You selected: ✂️")
-        else:
-            print("Invalid selection")
-            continue
-        c=["⛰️","📃","✂️"]
-        computerChoice=random.choice(c)
-        
-        if computerChoice==cChoice[yourChoice]:
-            print("Computer selected:",computerChoice)
-            print("Tie")
-            print("Computer points:",computerPoints)
-            print("Your points:",yourPoints)
-
-        elif (yourChoice==1 and computerChoice==cChoice[3]) or (yourChoice==2 and computerChoice==cChoice[1]) or (yourChoice==3 and computerChoice==cChoice[2]):
-            yourPoints+=1
-            print("Computer selectd:",computerChoice)
-            print("You wins")
-            print("Your points:",yourPoints)
-            print("Computer points:",computerPoints)
-        else:
-            computerPoints+=1
-            print("Computer selected:",computerChoice)
-            print("Computer wins")
-            print("Computer points:",computerPoints)
-            print("Your points:",yourPoints)
-        print()
-
-    if yourPoints>computerPoints:
-        print("👏 You wins this match")
-    elif yourPoints<computerPoints:
-        print("😔 You lose this match")
-    else:
-        print("Match drawn")
+    if i==1:
+        print("Rock Paper Scissor Game:-")
     print()
-    print("If you want to continue the game, Press yes")
-    print("else: Press no")
-    yourNeed=input()
-    if yourNeed=="yes" or yourNeed=="YES" or yourNeed=="Yes":
-        continue
+    if i>1:
+        print("If you want to continue the Game, Press 1")
+        print("Else press 0")
+        game=int(input())
+        if game==1:
+            pass
+        else:
+            if yourPoints>computerPoints:
+                print("👏 You wins this Game")
+            elif yourPoints<computerPoints:
+                print("😔 You lose this Game")
+            else:
+                print("Game drawn")
+            print("Thanks! for playing...")
+            break
+    print("Round",i,"start:")
+    print()
+    print("Please select any one option-")
+    print(str(1)+" for ⛰️",str(2)+" for 📃",str(3)+" for ✂️",sep="\n")
+    print()
+
+    yourChoice=int(input())
+    if yourChoice==1:
+        print("You selected: ⛰️")
+    elif yourChoice==2:
+        print("You selected: 📃")
+    elif yourChoice==3:
+        print("You selected: ✂️")
     else:
-        print("Thanks!")
-        break
+        print("Invalid selection")
+        continue
+    c=["⛰️","📃","✂️"]
+    computerChoice=random.choice(c)
+    
+    if computerChoice==cChoice[yourChoice]:
+        print("Computer selected:",computerChoice)
+        print("Tie")
+        print("Computer points:",computerPoints)
+        print("Your points:",yourPoints)
+
+    elif (yourChoice==1 and computerChoice==cChoice[3]) or (yourChoice==2 and computerChoice==cChoice[1]) or (yourChoice==3 and computerChoice==cChoice[2]):
+        yourPoints+=1
+        print("Computer selectd:",computerChoice)
+        print("👏 You wins this round")
+        print("Computer points:",computerPoints)
+        print("Your points:",yourPoints)
+    else:
+        computerPoints+=1
+        print("Computer selected:",computerChoice)
+        print("😔 You lose this round")
+        print("Computer points:",computerPoints)
+        print("Your points:",yourPoints)
+    print()
+    i+=1
