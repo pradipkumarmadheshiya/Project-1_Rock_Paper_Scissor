@@ -2,6 +2,7 @@ import random
 cChoice={1:"⛰️",2:"📃",3:"✂️"}
 i=1
 yourPoints,computerPoints=0,0
+tCnt=0
 while True:
     if i==1:
         print("Rock Paper Scissor Game:-")
@@ -19,6 +20,10 @@ while True:
                 print("😔 You lose this Game")
             else:
                 print("Game drawn")
+            print("Totol number of Your points:",yourPoints)
+            print("Totol number of Computer points:",computerPoints)
+            print("Total number of Ties:",tCnt)
+            print()
             print("Thanks! for playing...")
             break
         else:
@@ -43,6 +48,7 @@ while True:
     computerChoice=random.choice(c)
     
     if computerChoice==cChoice[yourChoice]:
+        tCnt+=1
         print("Computer selected:",computerChoice)
         print("Tie")
         print("Computer points:",computerPoints)
@@ -51,13 +57,13 @@ while True:
     elif (yourChoice==1 and computerChoice==cChoice[3]) or (yourChoice==2 and computerChoice==cChoice[1]) or (yourChoice==3 and computerChoice==cChoice[2]):
         yourPoints+=1
         print("Computer selectd:",computerChoice)
-        print("👏 You wins this round")
+        print("You wins this round")
         print("Computer points:",computerPoints)
         print("Your points:",yourPoints)
     else:
         computerPoints+=1
         print("Computer selected:",computerChoice)
-        print("😔 You lose this round")
+        print("You lose this round")
         print("Computer points:",computerPoints)
         print("Your points:",yourPoints)
     print()
